@@ -4,25 +4,7 @@ Este projeto foi desenvolvido como parte de um **desafio técnico da Accenture**
 O objetivo foi construir uma suíte de testes automatizados utilizando **Cypress** com boas práticas, como **Page Object Pattern**, **geração dinâmica de dados com Faker** e integração com **API e UI**.
 
 
-cypress/
-│
-├─ e2e/ # Testes E2E
-│ └─ flows
-│ ├─ bookStoreFlow.cy.js
-│ └─ ui/ # Testes de UI (Web)
-│ ├─ browserWindows.cy.js
-│ ├─ practiceForm.cy.js
-│ ├─ progressBar.cy.js
-│ ├─ sortable.cy.js
-│ └─ webTables.cy.js
-│
-├─ fixtures/ 
-│
-├─ support/
-│ ├─ api/ # Page Objects e fluxos de API
-│ └─ pages/ # Page Objects para UI
-│
-└─ cypress.config.js # Configuração do Cypress
+# 🔧 Tecnologias & Dependências
 
 - [Cypress] → framework de testes
 - [Page Object Pattern] → organização dos testes
@@ -38,7 +20,7 @@ cypress/
 # Rodar um teste individual
 - npx cypress run --spec "cypress/e2e/ui/webTables.cy.js"
   
-#Rodar todos os testes (regressivo completo)
+# Rodar todos os testes (regressivo completo)
 - npx cypress run
 
 
