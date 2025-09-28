@@ -25,6 +25,5 @@ it('Deve parar antes dos 25% e depois completar até 100%', () => {
 
   progressBar.getProgressValue().should('eq', '100');
 
-  // progressBar.reset();
-  // progressBar.getProgressValue().should('eq', '0');
+
 });
