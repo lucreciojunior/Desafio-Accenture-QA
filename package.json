@@ -2,9 +2,13 @@
   "name": "acct",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+ "scripts": {
+  "test": "cypress run",
+  "allure:clear": "rm -rf allure-results || true",
+  "allure:report": "allure generate allure-results --clean -o allure-report",
+  "allure:open": "allure open allure-report"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -117,9 +121,12 @@
   "description": "",
   "devDependencies": {
     "@4tw/cypress-drag-drop": "^2.3.1",
+    "@shelex/cypress-allure-plugin": "^2.41.2",
+    "allure-commandline": "^2.34.1",
     "cypress": "^15.3.0",
     "cypress-plugin-api": "^2.11.2",
     "cypress-real-events": "^1.15.0",
+    "cypress-terminal-report": "^7.2.1",
     "cypress-wait-until": "^3.0.2"
   }
 }

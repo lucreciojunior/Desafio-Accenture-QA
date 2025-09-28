@@ -19,6 +19,8 @@ import 'cypress-plugin-api';
 import 'cypress-wait-until';   
 import '@4tw/cypress-drag-drop';
 import "cypress-real-events";
+import '@shelex/cypress-allure-plugin';
+
 
 
 // Desabilita logs de XHR/fetch

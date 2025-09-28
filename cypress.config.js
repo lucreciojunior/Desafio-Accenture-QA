@@ -8,9 +8,13 @@ module.exports = defineConfig({
     video: false,
     viewportWidth: 1280,
     viewportHeight: 720,
-    reporter: 'cypress-terminal-report',
+    // reporter: 'cypress-terminal-report',
     reporterOptions: {
-      filterLog: (msg) => !msg.includes('fetch') && !msg.includes('xhr')
+      filterLog: (msg) => !msg.includes('fetch') && !msg.includes('xhr'),
+    setupNodeEvents(on, config) {
+      allureWriter(on, config);
+      return config;
+    },
     }
   }
 });
