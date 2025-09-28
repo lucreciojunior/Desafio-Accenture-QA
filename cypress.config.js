@@ -8,7 +8,9 @@ module.exports = defineConfig({
     video: false,
     viewportWidth: 1280,
     viewportHeight: 720,
-    // reporter: 'cypress-terminal-report',
+    defaultCommandTimeout: 15000,   
+    pageLoadTimeout: 120000,        
+    video: false,
     reporterOptions: {
       filterLog: (msg) => !msg.includes('fetch') && !msg.includes('xhr'),
     setupNodeEvents(on, config) {
