@@ -5,7 +5,6 @@ describe('Browser Windows - Nova janela', () => {
   it('Abrir nova janela e validar mensagem', () => {
     browserWindows.visit();
 
-    // Intercepta a URL da nova janela
     browserWindows.getNewWindowLink()
       .invoke('attr', 'onclick')
       .then((onClickAttr) => {
@@ -14,13 +13,10 @@ describe('Browser Windows - Nova janela', () => {
         cy.visit(newPageUrl);
       });
 
-    // Valida o texto esperado
     browserWindows.verifySamplePage();
 
-    // Fechar a aba 
     cy.go('back');
 
-    // Verifica que voltou para Browser Windows
     cy.contains('Browser Windows').should('be.visible');
   });
 

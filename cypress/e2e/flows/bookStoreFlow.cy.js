@@ -3,7 +3,6 @@ import bookStoreApi from '../../support/api/bookStoreApi';
 
 describe('Fluxo completo DemoQA BookStore', () => {
   before(() => {
-    // Cria usuário e token antes de todos os cenários
     accountApi.createUser().then((user) => {
       Cypress.env('user', user);
       return accountApi.generateToken(user.userName, user.password);

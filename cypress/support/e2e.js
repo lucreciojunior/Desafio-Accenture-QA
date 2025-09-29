@@ -22,7 +22,6 @@ import "cypress-real-events";
 import '@shelex/cypress-allure-plugin';
 
 
-// Hide fetch/XHR requests
 const app = window.top;
 if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
   const style = app.document.createElement('style');
@@ -34,11 +33,8 @@ if (!app.document.head.querySelector('[data-hide-command-log-request]')) {
 }
 
 
+Cypress.on('uncaught:exception', () => false); 
 
-// Desabilita logs de XHR/fetch
-Cypress.on('uncaught:exception', () => false); // evita falhar por erros de terceiros
-
-// Intercepta tudo sem logar
 Cypress.Commands.overwrite('intercept', (orig, ...args) => {
   if (typeof args[1] === 'string') {
     return orig(args[0], args[1], { ...args[2], log: false });

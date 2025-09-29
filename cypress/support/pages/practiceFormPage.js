@@ -9,7 +9,6 @@ class PracticeFormPage {
   }
 
   fillForm() {
-    // Dados aleatórios
     const firstName = faker.person.firstName();
     const lastName  = faker.person.lastName();
     const email     = faker.internet.email();
@@ -20,30 +19,23 @@ class PracticeFormPage {
     cy.get('#lastName').type(lastName);
     cy.get('#userEmail').type(email);
 
-    // Gênero – clica no primeiro
     cy.get('label[for="gender-radio-1"]').click();
 
     cy.get('#userNumber').type(phone);
 
-    // Data de Nascimento
     cy.get('#dateOfBirthInput').click();
     cy.get('.react-datepicker__year-select').select('1995');
     cy.get('.react-datepicker__month-select').select('March');
     cy.get('.react-datepicker__day--015').click();
 
-    // Matérias
     cy.get('.subjects-auto-complete__value-container').type('Maths{enter}');
 
-    // Hobbies
-    cy.get('label[for="hobbies-checkbox-1"]').click(); // Sports
+    cy.get('label[for="hobbies-checkbox-1"]').click();
 
-    // Upload arquivo
     cy.get('#uploadPicture').selectFile('cypress/fixtures/teste.txt');
 
-    // Endereço
     cy.get('#currentAddress').type(address);
 
-    // Estado / Cidade
     cy.get('#state').click();
     cy.get('.css-26l3qy-menu').contains('NCR').click();
     cy.get('#city').click();

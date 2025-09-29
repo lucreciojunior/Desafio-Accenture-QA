@@ -1,7 +1,7 @@
 
 class ProgressBarPage {
   visit() {
-    cy.visit('/progress-bar'); // ajuste se a rota for diferente
+    cy.visit('/progress-bar');
   }
 
   start() {
